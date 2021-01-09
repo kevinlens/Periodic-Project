@@ -1,4 +1,5 @@
-import './App.scss';
+import './Resources.scss';
+
 
 function App() {
   return (
