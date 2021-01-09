@@ -6,12 +6,14 @@ import {
 
 import Header from './components/Header/Header';
 import Resources from './screens/configuration/Resources'
+import Bookables from './screens/configuration/Bookables'
 
 const App = () => {
   return (
     <Router>
           <Header />
           <Route path='/' exact component={Resources} />
+          <Route path='/bookables' exact component={Bookables} />
     </Router>
   );
 };

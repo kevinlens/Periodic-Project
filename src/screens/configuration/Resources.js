@@ -1,7 +1,7 @@
 import './Resources.scss';
 
 
-function App() {
+function Resources() {
   return (
     <section className="App">
       Hello world
@@ -9,4 +9,4 @@ function App() {
   );
 }
 
-export default App;
+export default Resources;
