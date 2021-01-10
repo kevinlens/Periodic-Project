@@ -1,1 +1,34 @@
-@import '../../styles/variables'
+@import '../../styles/variables';
+
+.header {
+  //I prefer to use flexbox because I don't want to have to deal with things like the float properties
+  display: flex;
+  //Align-items is the same as 'justify-content: center' but in opposite directions (cross axis)
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 1.4rem;
+  height: 7rem;
+  background-color: #4a4a4a;
+  color: #b1b1b1;
+
+  .user {
+    display: flex;
+    align-items: center;
+    &__photo {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+
+      margin-right: 2rem;
+    }
+    &__name {
+      margin-right: 5rem;
+    }
+  }
+
+  &__logo {
+    height: 3.25rem;
+    margin-left: 2rem;
+  }
+}
