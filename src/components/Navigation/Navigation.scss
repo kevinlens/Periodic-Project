@@ -5,9 +5,8 @@
   justify-content: center;
   .navigation-list {
     display: flex;
-
     &__item {
-      margin: 3.75rem 3.75rem 2.75rem 6.75rem;
+      margin: 3.75rem 7.75rem 2.75rem 7.75rem;
       list-style-type: none;
     }
 
@@ -16,26 +15,6 @@
       font-size: 1.75rem;
       text-decoration: none;
       text-transform: uppercase;
-    }
-  }
-}
-
-.sub-navigation {
-  display: flex;
-  justify-content: center;
-  .sub-navigation-list {
-    display: flex;
-    background-color: pink;
-    &__item {
-      margin: 1.75rem 3.75rem 1.75rem 6.75rem;
-      list-style-type: none;
-    }
-
-    &__link {
-      color: #b1b1b1;
-      font-size: 1.15rem;
-      text-decoration: none;
-      text-transform: lowercase;
     }
   }
 }

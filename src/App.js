@@ -19,9 +19,11 @@ const App = () => {
   return (
     <Router>
           {/* Managing and maintaning everything is a lot easier when I break them up into each individual components */}
+          {/* These three components should appear on every page we are on serving as usuable header/navigation menus */}
           <Header />
           <Navigation />
           <Sub_Navigation />
+          {/* These two should only appear based on the current location pathname */}
           <Route path='/Configuration/Resources' exact component={Resources} />
           <Route path='/Configuration/Bookables' exact component={Bookables} />
     </Router>

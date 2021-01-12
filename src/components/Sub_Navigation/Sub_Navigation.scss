@@ -1,0 +1,38 @@
+@import '../../styles/variables';
+
+.sub_navigation {
+  display: flex;
+  /* center containers on page */
+  justify-content: center;
+  
+  .sub_navigation-list {
+    /* I can also adjust the width of this .sub_navigation according using media queries for bigger screens but
+     that would depend on whether or not our intention is to keep it one size page or stretched out navigation and everything */
+    display: flex;
+    justify-content: center;
+
+    border-radius: .25rem;
+    background-color: #5024F5;
+    /* These are the declarations I would try to include and work around with if the goal of project
+    is not to replicate the model exactly. These are just here to help assist me if I would like to continue down
+    this path of making a more responsive navigation desgin */
+    // flex-wrap: wrap;
+    // width: 70%;
+    &__item {
+      padding: 2.3rem 8.5rem 1.75rem 8.5rem;
+      list-style-type: none;
+      
+    }
+
+    &__link {
+      color: #b1b1b1;
+      font-size: 1.25rem;
+      text-decoration: none;
+      text-transform: lowercase;
+      // border-radius: 5px;
+      // background-color: white;
+      // padding: 1.6rem 5rem 1.15rem 5rem;
+    }
+  }
+}
+
