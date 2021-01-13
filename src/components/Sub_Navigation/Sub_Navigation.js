@@ -14,6 +14,7 @@ import Settings from './Sections/Settings';
 const Sub_Navigation = ({ history }) => {
   // I chose to do it like this is because having background color on a select tab is a bit more complex
   // then doing it plain css and requires are scenario based, where it should only appear if user are on a selected tab
+  // This is the white background color on selected link/section of sub_navigation page
   const [properties, setProperties] = useState({
     padding: '1.4rem 4.2rem 1rem 4.2rem',
     backgroundColor: 'white',

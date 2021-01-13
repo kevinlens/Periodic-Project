@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../Sub_Navigation.scss';
+import { withRouter } from 'react-router-dom';
 
 // similar to <Link> but helps add styling attributes to elements based on it's to="/" url
 import { NavLink } from 'react-router-dom';
 
-const Activity = ({design}) => {
+const Activity = ({design, history}) => {
+
+  useEffect(() => {
+    history.push('/Activity/Section0');
+  }, []);
 
   return (
 
@@ -69,4 +74,4 @@ const Activity = ({design}) => {
   );
 }
 
-export default Activity;
+export default withRouter(Activity);

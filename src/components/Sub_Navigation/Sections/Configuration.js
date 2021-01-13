@@ -1,10 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import '../Sub_Navigation.scss';
 
 // similar to <Link> but helps add styling attributes to elements based on it's to="/" url
 import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-const Configuration = ({design}) => {
+
+const Configuration = ({design, history}) => {
+
+  useEffect(() => {
+    history.push('/Configuration/Resources');
+  }, []);
 
   return (
 
@@ -63,4 +69,4 @@ const Configuration = ({design}) => {
   );
 }
 
-export default Configuration;
+export default withRouter(Configuration);

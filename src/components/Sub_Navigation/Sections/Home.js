@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../Sub_Navigation.scss';
 
 // similar to <Link> but helps add styling attributes to elements based on it's to="/" url
 import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-const Home = ({design}) => {
+const Home = ({design, history}) => {
+
+  useEffect(() => {
+    history.push('/Home/Section0');
+  }, []);
 
   return (
 
@@ -68,4 +73,4 @@ const Home = ({design}) => {
   );
 }
 
-export default Home;
+export default withRouter(Home);

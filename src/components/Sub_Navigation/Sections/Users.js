@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../Sub_Navigation.scss';
 
 // similar to <Link> but helps add styling attributes to elements based on it's to="/" url
 import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-const Users = ({design}) => {
+const Users = ({design, history}) => {
+
+  useEffect(() => {
+    history.push('/Users/Section0');
+  }, []);
 
   return (
     <ul className='sub_navigation-list'>
@@ -77,4 +82,4 @@ const Users = ({design}) => {
   );
 }
 
-export default Users;
+export default withRouter(Users);

@@ -10,6 +10,25 @@
       list-style-type: none;
     }
 
+    &__item-tri {
+      margin: 3.75rem 7.75rem 2.75rem 7.75rem;
+      list-style-type: none;
+      position: relative;
+
+      &::after{
+        position: absolute;
+        bottom: 0;
+        height: 0;
+        top:15px;
+        width: 0;
+        left: 40%;
+        border: 20px solid transparent;
+        border-bottom-color: #5024F5;
+        content: "";
+      }
+      
+    }
+
     &__link {
       color: #b1b1b1;
       font-size: 1.75rem;
