@@ -4,7 +4,6 @@ import {
   Route,
 } from "react-router-dom";
 
-
 //SCREENS
 import Resources from './screens/configuration/Resources'
 import Bookables from './screens/configuration/Bookables'

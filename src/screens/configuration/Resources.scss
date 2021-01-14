@@ -72,45 +72,95 @@
       font-weight: 600;
 
     }
-  }
 
-  .main-section {
-    padding: 1rem 4rem;
-    &__label {
-      color:#b2bec3;
-      font-size: 1rem;
-      display: flex;
-      flex-direction: column;
-      margin-left:-5px;
+    .main-section {
+      padding: 1rem 4rem;
+      &__label {
+        color:#b2bec3;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        margin-left:-5px;
+      }
+  
+      &__input {
+        height:4rem;
+        font-size: 3rem;
+        border: none;
+        border-bottom:solid #E7E7E9 2px;
+        &:focus {
+          outline: none;
+        }
+      }
+  
+      &__form {
+        margin-top:1rem;
+      }
+  
+      &__select {
+        background: url('../../images/downArrow.png') no-repeat 99.5% 70%;
+        background-size: 20px 20px;
+        appearance: none;
+        
+        padding: 10px 10px 3px 0px;
+        display: block;
+        width: 75rem;
+        border: none;
+        font-size: 1.05rem;
+        
+        border-bottom: 2.25px solid #5024F5;
+        
+      }
+  
     }
 
-    &__input {
-      height:4rem;
-      font-size: 3rem;
-      border: none;
-      border-bottom:solid #E7E7E9 2px;
-      &:focus {
-        outline: none;
+    .main-form {
+      background-color: #FFFFFF;
+      width: 25%;
+      margin: -1rem 5rem 5rem 3.5rem;
+      box-shadow:0px 2px 5px 1px rgba(0, 0, 0, 0.25);
+      &__button {
+        margin-right: 1rem;
+        padding: 1rem 1rem;
+        width: 100%;
+        background-color: #4FE3BF;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+
+    }
+
+    .add-resource {
+      display: flex;
+      align-items: center;
+      width: 14rem;
+      display: flex;
+      cursor: pointer;
+      color: #4FE3BF;
+      margin: 2rem 1rem 2rem 3.25rem;
+
+      &__image {
+        background-size: 2rem;
+        height: 2.25rem;
+      }
+      &__button {
+        background-color: white;
+        margin-right: 1rem;
+        padding: 0rem 0.25rem;
+        border: none;
+        border-radius: 3px;
+        color: #4FE3BF;
+        text-transform: uppercase;
+        cursor: pointer;
       }
     }
 
-    &__form {
-      margin-top:1rem;
-    }
-
-    &__select {
-      background: url('../../images/downArrow.png') no-repeat 99.5% 70%;
-      background-size: 20px 20px;
-      appearance: none;
-      
-      padding: 10px 10px 3px 0px;
-      display: block;
-      width: 75rem;
-      border: none;
-      font-size: 1.05rem;
-      
-      border-bottom: 2.25px solid #5024F5;
-      
-    }
   }
+
+
+
 }
