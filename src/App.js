@@ -1,4 +1,5 @@
 import React from 'react';
+//Needed to be able to work with routing (does not come ready with React) 
 import {
   BrowserRouter as Router,
   Route,
@@ -21,7 +22,7 @@ const App = () => {
           <Header />
           <Navigation />
           <Sub_Navigation />
-          {/* These two should only appear based on the current location pathname */}
+          {/* This should only appear based on the current location pathname */}
           <Route path='/Configuration/Resources' exact component={Resources} />
     </Router>
   );

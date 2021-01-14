@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 // similar to <Link> but helps add styling attributes to elements based on it's to="/" url
 import { NavLink } from 'react-router-dom';
 
-const Activity = ({design, history}) => {
+const Activity = ({whiteTab, history}) => {
 
   useEffect(() => {
     history.push('/Activity/Section0');
@@ -19,7 +19,7 @@ const Activity = ({design, history}) => {
         to='/Activity/Section0' 
         className='sub_navigation-list__link'
         activeClassName="selected"
-        activeStyle={design}
+        activeStyle={whiteTab}
       >
         Section
       </NavLink>
@@ -30,7 +30,7 @@ const Activity = ({design, history}) => {
         to='/Activity/Section1' 
         className='sub_navigation-list__link'
         activeClassName="selected"
-        activeStyle={design}
+        activeStyle={whiteTab}
       >
         Section
       </NavLink>
@@ -41,7 +41,7 @@ const Activity = ({design, history}) => {
         to='/Activity/Section2' 
         className='sub_navigation-list__link'
         activeClassName="selected"
-        activeStyle={design}
+        activeStyle={whiteTab}
       >
         Section
       </NavLink>
@@ -52,7 +52,7 @@ const Activity = ({design, history}) => {
         to='/Activity/Section3' 
         className='sub_navigation-list__link'
         activeClassName="selected"
-        activeStyle={design}
+        activeStyle={whiteTab}
       >
         Section
       </NavLink>
@@ -63,7 +63,7 @@ const Activity = ({design, history}) => {
         to='/Activity/Section4' 
         className='sub_navigation-list__link'
         activeClassName="selected"
-        activeStyle={design}
+        activeStyle={whiteTab}
       >
         Section
       </NavLink>

@@ -5,7 +5,7 @@ import '../Sub_Navigation.scss';
 import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
-const Home = ({design, history}) => {
+const Home = ({whiteTab, history}) => {
 
   useEffect(() => {
     history.push('/Home/Section0');
@@ -19,7 +19,7 @@ const Home = ({design, history}) => {
                 to='/Home/Section0' 
                 className='sub_navigation-list__link'
                 activeClassName="selected"
-                activeStyle={design}
+                activeStyle={whiteTab}
               >
                 Section
               </NavLink>
@@ -30,7 +30,7 @@ const Home = ({design, history}) => {
                 to='/Home/Section1' 
                 className='sub_navigation-list__link'
                 activeClassName="selected"
-                activeStyle={design}
+                activeStyle={whiteTab}
               >
                 Section
               </NavLink>
@@ -41,7 +41,7 @@ const Home = ({design, history}) => {
                 to='/Home/Section2' 
                 className='sub_navigation-list__link'
                 activeClassName="selected"
-                activeStyle={design}
+                activeStyle={whiteTab}
               >
                 Section
               </NavLink>
@@ -52,7 +52,7 @@ const Home = ({design, history}) => {
                 to='/Home/Section3' 
                 className='sub_navigation-list__link'
                 activeClassName="selected"
-                activeStyle={design}
+                activeStyle={whiteTab}
               >
                 Section
               </NavLink>
@@ -63,7 +63,7 @@ const Home = ({design, history}) => {
                 to='/Home/Section4' 
                 className='sub_navigation-list__link'
                 activeClassName="selected"
-                activeStyle={design}
+                activeStyle={whiteTab}
               >
                 Section
               </NavLink>

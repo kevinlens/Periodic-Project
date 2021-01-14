@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
 
-const Configuration = ({design, history}) => {
+const Configuration = ({whiteTab, history}) => {
 
   useEffect(() => {
     history.push('/Configuration/Resources');
@@ -19,7 +19,7 @@ const Configuration = ({design, history}) => {
       <NavLink 
         to='/Configuration/Providers' className='sub_navigation-list__link'
         activeClassName="selected"
-        activeStyle={design}
+        activeStyle={whiteTab}
       >
         providers
       </NavLink>
@@ -29,7 +29,7 @@ const Configuration = ({design, history}) => {
       <NavLink 
         to='/Configuration/Bookables' className='sub_navigation-list__link'
         activeClassName="selected"
-        activeStyle={design}
+        activeStyle={whiteTab}
       >
         bookables
       </NavLink>
@@ -39,7 +39,7 @@ const Configuration = ({design, history}) => {
     <NavLink
         to='/Configuration/Resources' className='sub_navigation-list__link'
         activeClassName="selected"
-        activeStyle={design}
+        activeStyle={whiteTab}
         >
         Resources
     </NavLink>
@@ -49,7 +49,7 @@ const Configuration = ({design, history}) => {
       <NavLink 
         to='/Configuration/Forms' className='sub_navigation-list__link'
         activeClassName="selected"
-        activeStyle={design}
+        activeStyle={whiteTab}
       >
         Forms
       </NavLink>
@@ -59,7 +59,7 @@ const Configuration = ({design, history}) => {
       <NavLink 
         to='/Configuration/Messages' className='sub_navigation-list__link'
         activeClassName="selected"
-        activeStyle={design}
+        activeStyle={whiteTab}
       >
         Messages
       </NavLink>
