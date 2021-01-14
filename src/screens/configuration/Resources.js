@@ -3,7 +3,9 @@ import './Resources.scss';
 import PostData from '../../data/provider-data.json';
 import resourceData from '../../data/resource-data.json';
 
-import URL from '../../images/icons8-plus-64.png';
+import plusSymbol from '../../images/plusSymbol.png';
+import profilePic from '../../images/circle-K.png';
+
 import Checkbox from './Checkbox';
 
 function Resources() {
@@ -78,11 +80,13 @@ function Resources() {
   };
   //=======================================================
 
+  //Shortcut to remove the "add selected" button
   const [disabled, setDisabled] = useState({
     disabled: false,
   });
   const disableEverything = disabled.disabled;
 
+  //To hide form when 'add resource' button has not been clicked
   const [form, setForm] = useState({ form: false });
   const displayForm = form.form;
   const showForm = () => {
@@ -151,10 +155,18 @@ function Resources() {
             </form>
           </div>
 
-          <div className='add-resource' onClick={showForm}>
-            <img src={URL} className='add-resource__image' />
-            <button className='add-resource__button'>Add Resource</button>
-          </div>
+          {/* Ternary here to prevent form popup when user clicks on 'add resource' and then selects a provider. */}
+          {disableEverything ? (
+            <div className='add-resource' onClick={showForm}>
+              <img src={plusSymbol} className='add-resource__image' />
+              <button className='add-resource__button'>Add Resource</button>
+            </div>
+          ) : (
+            <div className='add-resource'>
+              <img src={plusSymbol} className='add-resource__image' />
+              <button className='add-resource__button'>Add Resource</button>
+            </div>
+          )}
 
           {disableEverything ? (
             <div
@@ -164,7 +176,7 @@ function Resources() {
               <form onSubmit={handleFormSubmit}>
                 {createCheckboxes()}
                 <div>
-                  <button type='submit' className='main-form__button'>
+                  <button type='submit' onClick={showForm} className='main-form__button'>
                     Add Selected
                   </button>
                 </div>
@@ -173,10 +185,27 @@ function Resources() {
           ) : (
             <div></div>
           )}
+          <div className="resource-box-container">
+            {globalResource.map((item) => (
+              <div className='resource-box'>
+                <div className='resource-boxes'>
+                  <img src={profilePic} className='resource-boxes__image' />
 
-          <div>
-            <div></div>
-            <div>hi</div>
+                  <div className='resource-boxes__name'>
+                    <div>{item}</div>
+                    <div>Required</div>
+                  </div>
+
+                  <div className="resource-boxes__close">
+                    <div className='resource-boxes__closeSideOne'>
+                      <div className='resource-boxes__closeSideTwo'></div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            ))}
           </div>
         </main>
       </div>

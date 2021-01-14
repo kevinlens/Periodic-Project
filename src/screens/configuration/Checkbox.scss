@@ -23,23 +23,29 @@
       }
     }
   }
+  &__label {
+    display: inline-block;
+    width: 17.5rem;
+    height: 5rem;
+    padding: 1.62rem 0rem 0rem 0rem;
+    cursor: pointer;
+  }
   display: block;
   position: relative;
-  padding: 1.5rem 1rem 1rem 4.5rem;
-  cursor: pointer;
+  padding: 0rem 0rem 0rem 4.5rem;
   font-size: 1.3rem;
   user-select: none;
   &:hover {
-    background-color: #EDEDED;
+    background-color: #ededed;
   }
   .checkmark {
     &:after {
       left: 3.5px;
-      top: -.75px;
+      top: -0.75px;
 
       width: 4.5px;
       height: 8.5px;
-      
+
       border: solid white;
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
@@ -53,8 +59,8 @@
   left: 1.6rem;
   height: 1.3rem;
   width: 1.3rem;
-	background-color: white;
-	border-radius: 2px;
+  background-color: white;
+  border-radius: 2px;
   border: 1.25px black solid;
   &:after {
     content: '';

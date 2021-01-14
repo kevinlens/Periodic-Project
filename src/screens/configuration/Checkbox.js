@@ -4,7 +4,7 @@ import './Checkbox.scss';
 
 const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
   <div class="checkbox-container">
-    <label>
+    <label class="checkbox-container__label">
       <input
         type="checkbox"
         name={label}
