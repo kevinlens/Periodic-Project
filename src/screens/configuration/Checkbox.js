@@ -12,6 +12,7 @@ const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
         onChange={onCheckboxChange}
         className="form-check-input"
       />
+      {/* if checkbox is selected then change the grey border to none */}
       <span class="checkmark" style={isSelected ? {border: 'none'} : {border: ''}}></span>
       {label}
     </label>

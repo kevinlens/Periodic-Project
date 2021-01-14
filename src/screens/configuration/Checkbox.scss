@@ -1,11 +1,7 @@
-/* Hide the browser's default checkbox */
-/* CONTAINER */
-/* CUSTOM CHECKBOX */
-/* BLUE BACKGROUND WHEN CHECKED*/
-/* CHECKMARK INDICATOR, HIDDEN WHEN NOT CHECK */
-/* SHOW CHECKMARK WHEN CHECKED*/
-/* STYLE FOR CHECKMARK */
+@import '../../styles/variables';
+
 .checkbox-container {
+  // Hide the browser's default checkbox
   input {
     position: absolute;
     opacity: 0;
@@ -15,7 +11,8 @@
     &:checked {
       ~ {
         .checkmark {
-          background-color: #4fe3bf;
+          /* GREEN BACKGROUND WHEN CHECKED*/
+          background-color: $color-primary;
           &:after {
             display: block;
           }
@@ -23,6 +20,7 @@
       }
     }
   }
+  //FOR BIGGER WIDTH TO CLICK/CHECK
   &__label {
     display: inline-block;
     width: 17.5rem;
@@ -38,6 +36,7 @@
   &:hover {
     background-color: #ededed;
   }
+  // STYLE FOR CHECKMARK
   .checkmark {
     &:after {
       left: 3.5px;
@@ -46,12 +45,13 @@
       width: 4.5px;
       height: 8.5px;
 
-      border: solid white;
+      border: solid $color-white-2;
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
     }
   }
 }
+/* CUSTOM CHECKBOX */
 .checkmark {
   position: absolute;
   box-sizing: content-box;
@@ -59,9 +59,10 @@
   left: 1.6rem;
   height: 1.3rem;
   width: 1.3rem;
-  background-color: white;
+  background-color: $color-white-2;
   border-radius: 2px;
   border: 1.25px black solid;
+  //CHECKMARK INDICATOR, HIDDEN WHEN NOT CHECK
   &:after {
     content: '';
     position: absolute;

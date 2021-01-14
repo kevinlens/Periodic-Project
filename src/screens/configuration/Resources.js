@@ -1,30 +1,41 @@
 import React, { useState } from 'react';
 import './Resources.scss';
+
+// Data
 import ProviderData from '../../data/provider-data.json';
 import resourceData from '../../data/resource-data.json';
 
+// Images
 import plusSymbol from '../../images/plusSymbol.png';
 import profilePic from '../../images/circle-K.png';
 
 import Checkbox from './Checkbox';
 
 function Resources() {
+  //=================================STATE=========================================
+
   //For setting up the resource boxes based on what resource user has selected
   const [globalResource, setGlobalResource] = useState([]);
+
+  //Value is the id of the selected provider
   const [value, setValue] = useState({
     value: 'select',
   });
+
   //To hide form when 'add resource' button has not been clicked
   const [form, setForm] = useState({ form: false });
-  //Shortcut to remove the "add selected" button
+
+  //For disabling the resource button
   const [disabled, setDisabled] = useState({
     disabled: false,
   });
+  const disableEverything = disabled.disabled;
 
-  //All the names coming from the resource-data.json file. Put into an array
+  //All the names coming from the resource-data.json file. Put into an array to be used below
   const OPTIONS = resourceData.map((item) => {
     return item.name;
   });
+
   //For checking/unchecking the check box
   //Should look like {checkboxes: {'Stylist Joe': false}}
   const [check, setCheck] = useState({
@@ -37,28 +48,18 @@ function Resources() {
     ),
   });
 
-  //=======================================================
+  //=================================STATE=========================================
 
+  //===================================SELECT PROVIDER: HANDLE ON CHANGE (HANDLE CHANGE)=========================================
   const handleChange = (event) => {
+    // Set the provider value(id) for the select form
     setValue({ value: event.target.value });
+    // Enables the 'Add Resource' button to be clickable 
     setDisabled({
       disabled: true,
     });
   };
-
-  //===================================CHECK/UNCHECK=========================================
-  
-  const handleCheckboxChange = (changeEvent) => {
-    const { name } = changeEvent.target;
-
-    setCheck((prevState) => ({
-      checkboxes: {
-        ...prevState.checkboxes,
-        [name]: !prevState.checkboxes[name],
-      },
-    }));
-  };
-  //===================================CHECK/UNCHECK=========================================
+  //===================================SELECT PROVIDER: HANDLE ON CHANGE (HANDLE CHANGE)=========================================
 
   //===================================DISPLAY FORM: TOGGLE ON/OFF=========================================
 
@@ -74,6 +75,7 @@ function Resources() {
 
   //===================================CREATE CHECK BOXES=========================================
 
+  //Should create this as many times as there are the amount of names from the SELECTNAMES array
   const createCheckbox = (option) => (
     <Checkbox
       label={option}
@@ -83,30 +85,48 @@ function Resources() {
     />
   );
 
-  const createCheckboxes = () => SELECTNAMES.map(createCheckbox);
-
-  //===================================CREATE CHECK BOXES=========================================
-
-  //===================================FORM SUBMIT=========================================
-
-  const handleFormSubmit = (formSubmitEvent) => {
-    formSubmitEvent.preventDefault();
-
-    const resourceSubmit = Object.keys(check.checkboxes).filter(
-      (checkbox) => check.checkboxes[checkbox]
-    );
-    setGlobalResource([...resourceSubmit]);
-  };
-  //===================================FORM SUBMIT=========================================
-
+  // take any resource which contain an associated id to the user's selected provider
   const SELECTOPTIONS = resourceData.filter(
     (item) => item.associated_providers[0] === value.value
   );
+  // create a new array with the names of the resource from the last array
   const SELECTNAMES = SELECTOPTIONS.map((item) => {
     return item.name;
   });
 
-  const disableEverything = disabled.disabled;
+  const createCheckboxes = () => SELECTNAMES.map(createCheckbox);
+
+  //===================================CREATE CHECK BOXES=========================================
+
+  //===================================CHECK/UNCHECK=========================================
+
+  const handleCheckboxChange = (changeEvent) => {
+    const { name } = changeEvent.target;
+
+    //Toggle true/false based on the name of the check/unchecked boxes
+    setCheck((prevState) => ({
+      checkboxes: {
+        ...prevState.checkboxes,
+        [name]: !prevState.checkboxes[name],
+      },
+    }));
+  };
+  //===================================CHECK/UNCHECK=========================================
+
+  //===================================FORM SUBMIT=========================================
+
+  const handleFormSubmit = (formSubmitEvent) => {
+    //Prevent default
+    formSubmitEvent.preventDefault();
+
+    // Creating an array with all the names from the state object 'check' --> checkboxes (any values that are true)
+    const resourceSubmit = Object.keys(check.checkboxes).filter(
+      (checkbox) => check.checkboxes[checkbox]
+    );
+    // All the true values(meaning checked boxes) are set here for the resource boxes to reference to and create
+    setGlobalResource([...resourceSubmit]);
+  };
+  //===================================FORM SUBMIT=========================================
 
   //====================JSX-JSX-JSX-JSX===================================
   //====================JSX-JSX-JSX-JSX===================================
